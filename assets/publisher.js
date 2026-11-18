@@ -179,8 +179,8 @@
       { label: '最近30天下载', value: data.snapshot.downloads, scope: '发行商总体 · 截至 2026-11-16' },
       ...(data.snapshot.revenue ? [{ label: '最近30天收入', value: data.snapshot.revenue, scope: '发行商总体 · 截至 2026-11-16' }] : []),
       { label: '最近30天平均 DAU', value: data.snapshot.dau, scope: '发行商总体 · 截至 2026-11-16' },
-      { label: 'D7 留存', value: `${data.retention.d7.toFixed(1)}%`, scope: '主力产品 · 2026 年 10 月安装群体' },
-      { label: 'D30 留存', value: `${data.retention.d30.toFixed(1)}%`, scope: '主力产品 · 2026 年 10 月安装群体' }
+      { label: 'D7 留存', value: `${data.retention.d7.toFixed(1)}%`, scope: '主力产品 · 2026 年 10 月' },
+      { label: 'D30 留存', value: `${data.retention.d30.toFixed(1)}%`, scope: '主力产品 · 2026 年 10 月' }
     ];
 
     root.innerHTML = `<div class="publisher-panel">
@@ -198,7 +198,7 @@
         }).join('')}</div>
       </div>
       <div class="retention-block">
-        <div class="retention-copy"><h3>主力产品留存表现</h3><p>2026 年 10 月安装群体 · 全球</p></div>
+        <div class="retention-copy"><h3>主力产品留存表现</h3><p>2026 年 10 月 · 全球</p></div>
         <div class="retention-bars">${[['D7', data.retention.d7], ['D30', data.retention.d30]].map(([label, value]) => `<div class="retention-row"><span>${label}</span><div class="retention-track"><div class="retention-fill" style="width:${Math.min(value * 2, 100)}%"></div></div><b>${value.toFixed(1)}%</b></div>`).join('')}</div>
       </div>
       <details class="publisher-details">
